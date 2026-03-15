@@ -288,7 +288,8 @@ img {
     text-transform: uppercase;
     letter-spacing: 4px;
     color: var(--gold-light);
-    margin-bottom: 24px;
+    margin-top: 20px;
+    margin-bottom: 28px;
 }
 
 .hero-title {
@@ -592,18 +593,77 @@ img {
     background: var(--cream);
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+/* Carousel */
+.testimonial-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    flex: 1;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .testimonial-card {
     background: var(--white);
-    padding: 36px;
+    padding: 40px 48px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    position: relative;
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-arrow {
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    color: var(--navy);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-arrow:hover {
+    background: var(--gold);
+    color: var(--white);
+    border-color: var(--gold);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.15);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition);
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--gold);
+    transform: scale(1.2);
 }
 
 .testimonial-stars {
@@ -615,16 +675,17 @@ img {
 
 .testimonial-text {
     color: var(--text);
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: 24px;
     font-style: italic;
+    max-width: 700px;
 }
 
 .testimonial-author {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
 .avatar-placeholder {
@@ -633,6 +694,13 @@ img {
     border-radius: 50%;
     background: linear-gradient(135deg, var(--gold-light), var(--gold));
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
 }
 
 .testimonial-author strong {
@@ -644,6 +712,48 @@ img {
 .testimonial-author span {
     font-size: 0.8rem;
     color: var(--text-light);
+}
+
+/* Video Testimonials */
+.video-testimonials {
+    margin-top: 60px;
+}
+
+.video-section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--navy);
+    margin-bottom: 36px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.video-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.video-card iframe {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    border: none;
+    background: #000;
+}
+
+.video-name {
+    padding: 16px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 1rem;
 }
 
 /* CTA */
@@ -851,8 +961,7 @@ img {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .services-grid,
-    .testimonials-grid {
+    .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -911,9 +1020,24 @@ img {
         margin: 0 auto;
     }
 
-    .services-grid,
-    .testimonials-grid {
+    .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+
+    .testimonial-card {
+        padding: 28px 24px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .hero-title {

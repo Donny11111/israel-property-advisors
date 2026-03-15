@@ -84,6 +84,70 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     });
 
+    // --- Testimonial Carousel ---
+    const track = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.carousel-track .testimonial-card');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    let currentSlide = 0;
+    let autoPlay;
+
+    // Create dots
+    cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    function goToSlide(index) {
+        currentSlide = index;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+
+    prevBtn.addEventListener('click', () => {
+        goToSlide(currentSlide === 0 ? cards.length - 1 : currentSlide - 1);
+        resetAutoPlay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        goToSlide(currentSlide === cards.length - 1 ? 0 : currentSlide + 1);
+        resetAutoPlay();
+    });
+
+    function startAutoPlay() {
+        autoPlay = setInterval(() => {
+            goToSlide(currentSlide === cards.length - 1 ? 0 : currentSlide + 1);
+        }, 6000);
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlay);
+        startAutoPlay();
+    }
+
+    startAutoPlay();
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    const trackContainer = document.querySelector('.carousel-track-container');
+    trackContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    trackContainer.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) nextBtn.click();
+            else prevBtn.click();
+        }
+    });
+
     // --- Active nav link highlighting ---
     const sections = document.querySelectorAll('section[id]');
     const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');

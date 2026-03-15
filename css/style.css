@@ -249,29 +249,19 @@ a {
     color: var(--white);
 }
 
-.logo-icon {
-    font-size: 1.5rem;
-    color: var(--gold);
+.logo-img {
+    height: 44px;
+    width: auto;
+    transition: all var(--transition);
 }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
+.navbar.scrolled .logo-img {
+    height: 36px;
 }
 
-.logo-main {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.logo-sub {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--gold-light);
-    opacity: 0.8;
+.footer-logo-img {
+    height: 50px;
+    width: auto;
 }
 
 .nav-links {
@@ -885,11 +875,7 @@ a {
 .footer-brand {
     display: flex;
     align-items: center;
-    gap: 12px;
-}
-
-.footer-brand .logo-icon {
-    color: var(--gold);
+    justify-content: center;
 }
 
 .footer-links {

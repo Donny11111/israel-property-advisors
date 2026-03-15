@@ -1,0 +1,13 @@
+{
+  "name": "israel-property-advisors",
+  "version": "1.0.0",
+  "description": "Israel Property Advisors - Yael Stolbach",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "author": "Yael Stolbach",
+  "license": "UNLICENSED",
+  "private": true
+}

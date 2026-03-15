@@ -4,80 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Israel Property Advisors | Yael Stolbach</title>
-    <meta name="description" content="Expert guidance for buying property in Israel. Yael Stolbach has helped clients purchase over 30 apartments — from search to keys in hand.">
+    <meta name="description" content="Expert guidance for buying property in Israel. Yael Stolbach has helped clients purchase over 30 apartments with full-service advisory.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <!-- Social / Open Graph -->
-    <meta property="og:title" content="Israel Property Advisors | Yael Stolbach">
-    <meta property="og:description" content="Expert guidance for buying property in Israel. Over 30 apartments sold — from search to keys in hand.">
-    <meta property="og:image" content="images/og-image.png">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/logo_icon.png">
 </head>
 <body>
-    <!-- ===================== NAVIGATION ===================== -->
-    <nav class="navbar" id="navbar">
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
         <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="images/logo.png" alt="Israel Property Advisors" class="logo-img">
+            <a href="#" class="nav-logo" style="display: flex; align-items: center; gap: 14px;">
+                <img src="images/logo_icon.png" alt="Logo Icon" class="logo-icon" style="height: 44px; width: auto; display: block; flex-shrink: 0;">
+                <span class="logo-text" style="color: #C6A962; line-height: 1;">Israel Property Advisors</span>
             </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#why-israel">Why Israel</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact" class="nav-cta">Get Started</a></li>
+                <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
             </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
         </div>
     </nav>
 
-    <!-- ===================== HERO ===================== -->
+    <!-- Hero Section -->
     <header class="hero" id="hero">
-        <!--
-            IMAGE #1: hero-bg.jpg — 1920x1080 (16:9)
-            PROMPT: Stunning aerial photograph of Jerusalem or Tel Aviv skyline at golden hour,
-            warm sunlight casting long shadows over white stone buildings and Mediterranean
-            architecture, cinematic quality, professional real estate photography, 4K resolution
-        -->
-        <div class="hero-bg">
-            <div class="hero-bg-placeholder">
-                <span>HERO IMAGE — 1920 × 1080 (16:9)</span>
-            </div>
+        <div class="hero-bg" style="background-image: url('images/hero_bg.jpg');">
+            <div class="hero-overlay"></div>
         </div>
-        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="hero-eyebrow">Your Trusted Partner in Israeli Real Estate</p>
-            <h1 class="hero-title">Finding Your <em>Perfect Property</em> in Israel</h1>
-            <p class="hero-subtitle">With over 30 apartments sold, Yael Stolbach guides you through every step — from discovery to keys in hand. No property listings. Just expert, personalized advice.</p>
+            <p class="hero-tag">Your Trusted Partner in Israeli Real Estate</p>
+            <h1 class="hero-title">Navigate Israel's Property Market<br><span>With Confidence</span></h1>
+            <p class="hero-subtitle">Expert guidance from search to keys in hand. Over 30 successful apartment purchases for clients who trusted the process.</p>
             <div class="hero-actions">
                 <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
-                <a href="#process" class="btn btn-outline">See How It Works</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">30+</span>
-                    <span class="stat-label">Apartments Sold</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number">15+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Client Focused</span>
-                </div>
+                <a href="#about" class="btn btn-outline">Learn More</a>
             </div>
         </div>
         <div class="hero-scroll">
@@ -86,283 +54,307 @@
         </div>
     </header>
 
-    <!-- ===================== ABOUT ===================== -->
+    <!-- Stats Bar -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat" data-count="30">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Apartments Sold</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Client Dedication</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">End-to-End</span>
+                    <span class="stat-label">Full Service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section class="about section" id="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image reveal">
-                    <!--
-                        IMAGE #2: yael-portrait.jpg — 600x800 (3:4)
-                        PROMPT: Professional headshot/portrait of a confident woman real estate advisor,
-                        warm and approachable smile, wearing elegant business attire, soft natural lighting,
-                        neutral background with subtle warmth, high-end corporate photography style,
-                        conveys trust and expertise
-                        NOTE: Replace with real photo of Yael Stolbach
-                    -->
-                    <div class="image-placeholder portrait">
-                        <span>YAEL PORTRAIT — 600 × 800 (3:4)</span>
-                    </div>
+                <div class="about-image">
+                    <img src="images/yael_portrait.jpg" alt="Yael Stolbach" class="portrait-img" style="border-radius: var(--radius); width: 100%; height: auto;">
                     <div class="about-image-accent"></div>
                 </div>
-                <div class="about-content reveal">
-                    <p class="section-eyebrow">Meet Yael</p>
-                    <h2 class="section-title">Your Personal Guide to Israeli Real Estate</h2>
-                    <p class="about-lead">I'm not here to sell you a specific property. I'm here to help you find the <strong>right one</strong>.</p>
-                    <p>Buying property in Israel can be overwhelming — especially from abroad. Different laws, unfamiliar neighborhoods, language barriers, and a maze of bureaucracy. That's where I come in.</p>
-                    <p>With over 30 apartments sold, I've built deep expertise and a trusted network of lawyers, mortgage brokers, contractors, and inspectors. I work exclusively for <em>you</em> — understanding what you need, what you can afford, and what will serve you best long-term.</p>
-                    <div class="about-signature">
-                        <span class="signature-name">Yael Stolbach</span>
-                        <span class="signature-title">Founder, Israel Property Advisors</span>
-                    </div>
+                <div class="about-content">
+                    <p class="section-tag">About Yael</p>
+                    <h2 class="section-title">Your Guide Through Every Step of Buying Property in Israel</h2>
+                    <p class="about-text">
+                        Buying property in Israel can feel overwhelming — a different language, unfamiliar legal systems, complex mortgage processes, and a fast-moving market. That's where I come in.
+                    </p>
+                    <p class="about-text">
+                        I've personally guided clients through the purchase of over 30 apartments across Israel. But I'm not just here to show you listings. I help you figure out <em>what you actually need</em>, navigate the bureaucracy, connect you with trusted lawyers and mortgage brokers, and stay by your side from first conversation to renovation completion.
+                    </p>
+                    <p class="about-text">
+                        Whether you're buying your first home, investing from abroad, or relocating to Israel — I make the process clear, safe, and even enjoyable.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">Let's Talk</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== SERVICES ===================== -->
-    <section class="services section section-dark" id="services">
+    <!-- Services Section -->
+    <section class="services section" id="services">
         <div class="container">
-            <div class="section-header reveal">
-                <p class="section-eyebrow">What I Do</p>
-                <h2 class="section-title">End-to-End Property Advisory</h2>
-                <p class="section-desc">I don't just find properties. I guide you through the entire journey — so you make confident, informed decisions.</p>
+            <div class="section-header">
+                <p class="section-tag">What I Do</p>
+                <h2 class="section-title">Full-Service Property Advisory</h2>
+                <p class="section-subtitle">I don't just find properties — I guide you through the entire journey, handling everything so you don't have to.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card reveal">
+                <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="20" r="14"/><path d="M30 30L42 42"/><path d="M14 20h12M20 14v12"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="24" cy="24" r="20"/>
+                            <path d="M24 14v20M14 24h20"/>
+                            <path d="M18 18l12 12M30 18L18 30" opacity="0.3"/>
+                        </svg>
                     </div>
-                    <h3>Property Search & Discovery</h3>
-                    <p>Don't know exactly what you want? I help you figure that out. Together we'll define your priorities — location, size, budget, lifestyle — and find properties that truly match.</p>
+                    <h3>Discovery & Strategy</h3>
+                    <p>Not sure what you're looking for? I help you clarify your goals, budget, and priorities — whether it's an investment, a family home, or a vacation apartment.</p>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 40V18L24 6l18 12v22a2 2 0 01-2 2H8a2 2 0 01-2-2z"/><path d="M18 42V28h12v14"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M8 40V20l16-12 16 12v20H8z"/>
+                            <path d="M18 40V28h12v12"/>
+                            <circle cx="24" cy="22" r="3"/>
+                        </svg>
                     </div>
-                    <h3>Neighborhood Expertise</h3>
-                    <p>Every neighborhood in Israel has its own character, price dynamics, and future potential. I'll give you the local knowledge that online research simply can't.</p>
+                    <h3>Property Search</h3>
+                    <p>Using deep market knowledge and local connections, I find properties that match your criteria — including off-market opportunities you won't find online.</p>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="10" width="36" height="28" rx="2"/><path d="M6 18h36"/><path d="M16 26h8M16 32h16"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="8" y="8" width="32" height="32" rx="4"/>
+                            <path d="M16 20h16M16 28h10"/>
+                            <path d="M14 14h4M14 20h0M14 26h0"/>
+                        </svg>
                     </div>
-                    <h3>Legal & Mortgage Guidance</h3>
-                    <p>I connect you with trusted Israeli lawyers and mortgage brokers, and make sure you understand every document, every clause, and every cost before you sign.</p>
+                    <h3>Legal & Contracts</h3>
+                    <p>I connect you with trusted Israeli real estate lawyers and walk you through every document — so you understand exactly what you're signing.</p>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 4v8M4 24h8M36 24h8M24 36v8"/><circle cx="24" cy="24" r="8"/><path d="M10 10l6 6M32 10l-6 6M10 38l6-6M32 38l-6-6"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="24" cy="24" r="16"/>
+                            <path d="M24 16v8l6 6"/>
+                            <path d="M16 8l-4-4M32 8l4-4"/>
+                        </svg>
                     </div>
-                    <h3>Renovations & Design</h3>
-                    <p>Found a place with potential? I coordinate trusted contractors, architects, and designers to transform your property — on budget and on schedule.</p>
+                    <h3>Mortgage Guidance</h3>
+                    <p>Israeli mortgages are complex. I work with top mortgage advisors to help you secure the best terms — whether you're a resident or buying from abroad.</p>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 4L6 14v20l18 10 18-10V14L24 4z"/><path d="M6 14l18 10M24 24v20M42 14L24 24"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 36l-4 4h28l-4-4"/>
+                            <path d="M10 36V20l14-10 14 10v16"/>
+                            <path d="M20 36V26h8v10"/>
+                            <path d="M18 20h12" stroke-dasharray="2 2"/>
+                        </svg>
                     </div>
-                    <h3>Negotiation & Closing</h3>
-                    <p>I negotiate on your behalf with local expertise, ensuring you get fair value. Then I manage the closing process so nothing falls through the cracks.</p>
+                    <h3>Renovations</h3>
+                    <p>Need work done on your new property? I coordinate with reliable contractors, architects, and designers to bring your vision to life — on time and on budget.</p>
                 </div>
-                <div class="service-card reveal">
+                <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 6h20a2 2 0 012 2v32a2 2 0 01-2 2H14a2 2 0 01-2-2V8a2 2 0 012-2z"/><path d="M20 36h8"/><circle cx="24" cy="18" r="6"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 24a12 12 0 0 1 24 0"/>
+                            <circle cx="24" cy="24" r="4"/>
+                            <path d="M24 8v4M8 24h4M36 24h4M14 14l3 3M34 14l-3 3"/>
+                        </svg>
                     </div>
-                    <h3>Ongoing Support</h3>
-                    <p>Even after you get the keys, I'm here. Property management questions, tenant issues, tax advice — I'm always just a call away.</p>
+                    <h3>Full Coordination</h3>
+                    <p>From translating documents to meeting contractors on-site — I handle the details so you can focus on the excitement of your new property.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== PROCESS ===================== -->
+    <!-- Process Section -->
     <section class="process section" id="process">
         <div class="container">
-            <div class="section-header reveal">
-                <p class="section-eyebrow">How It Works</p>
-                <h2 class="section-title">A Simple, Guided Process</h2>
-                <p class="section-desc">No surprises. No confusion. Just a clear path from first conversation to keys in hand.</p>
+            <div class="section-header">
+                <p class="section-tag">How It Works</p>
+                <h2 class="section-title">A Clear Path to Your Property</h2>
+                <p class="section-subtitle">No surprises, no confusion. Here's how we work together from start to finish.</p>
             </div>
             <div class="process-timeline">
-                <div class="process-step reveal">
+                <div class="process-step">
                     <div class="step-number">01</div>
                     <div class="step-content">
-                        <h3>Discovery Call</h3>
-                        <p>We start with a free conversation to understand your goals, budget, timeline, and lifestyle needs. No pressure — just clarity.</p>
+                        <h3>Free Consultation</h3>
+                        <p>We start with a conversation. Tell me your goals, timeline, and budget. I'll give you an honest assessment of what's realistic and how I can help.</p>
                     </div>
                 </div>
-                <div class="process-step reveal">
+                <div class="process-step">
                     <div class="step-number">02</div>
                     <div class="step-content">
-                        <h3>Strategy & Search</h3>
-                        <p>I build a personalized strategy, research neighborhoods, and curate properties that match your criteria. You only see what's worth your time.</p>
+                        <h3>Define Your Criteria</h3>
+                        <p>Together we narrow down locations, property types, must-haves, and deal-breakers. I help you think through things you might not have considered.</p>
                     </div>
                 </div>
-                <div class="process-step reveal">
+                <div class="process-step">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <h3>Viewings & Evaluation</h3>
-                        <p>We visit properties together (or virtually). I point out what you might miss — structural issues, neighborhood trends, hidden costs, and upside potential.</p>
+                        <h3>Property Search & Tours</h3>
+                        <p>I search the market, schedule viewings, and provide honest feedback on every property. No pressure — only options that truly fit.</p>
                     </div>
                 </div>
-                <div class="process-step reveal">
+                <div class="process-step">
                     <div class="step-number">04</div>
                     <div class="step-content">
-                        <h3>Negotiate & Close</h3>
-                        <p>I handle negotiations, coordinate with lawyers and mortgage brokers, and walk you through every document until you sign with full confidence.</p>
+                        <h3>Negotiation & Legal</h3>
+                        <p>Once you find the right property, I negotiate on your behalf and coordinate with lawyers to ensure a smooth, secure transaction.</p>
                     </div>
                 </div>
-                <div class="process-step reveal">
+                <div class="process-step">
                     <div class="step-number">05</div>
                     <div class="step-content">
                         <h3>Keys in Hand</h3>
-                        <p>Move-in ready or need renovations? Either way, I'm with you through the finish line and beyond. Welcome home.</p>
+                        <p>From mortgage finalization to renovation coordination — I stay with you until you're settled in your new home. And I'm always just a call away after.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== WHY ISRAEL ===================== -->
-    <section class="why-israel section section-dark" id="why-israel">
+    <!-- Why Israel Section -->
+    <section class="why-israel section">
         <div class="container">
             <div class="why-grid">
-                <div class="why-content reveal">
-                    <p class="section-eyebrow">Why Israel</p>
-                    <h2 class="section-title">A Market Worth Investing In</h2>
-                    <p>Israel's real estate market has shown consistent growth over the past two decades. Whether you're looking for a family home, a vacation apartment, or an investment property, the fundamentals are strong.</p>
+                <div class="why-content">
+                    <p class="section-tag">Why Israel</p>
+                    <h2 class="section-title">A Market Like No Other</h2>
+                    <p>Israel's real estate market is dynamic, resilient, and full of opportunity — but it operates differently than what you might be used to. Language barriers, unique legal processes, and a fast-paced market mean that having a trusted local expert isn't just helpful — it's essential.</p>
                     <ul class="why-list">
                         <li>
-                            <span class="why-icon">↗</span>
-                            <div>
-                                <strong>Strong Appreciation</strong>
-                                <p>Israeli property values have seen steady long-term growth, outperforming many global markets.</p>
-                            </div>
+                            <strong>Strong market fundamentals</strong>
+                            <span>Consistent demand and limited supply drive long-term value</span>
                         </li>
                         <li>
-                            <span class="why-icon">🏗</span>
-                            <div>
-                                <strong>Constant Development</strong>
-                                <p>New infrastructure, transit lines, and urban renewal projects continue to create opportunity.</p>
-                            </div>
+                            <strong>Complex buying process</strong>
+                            <span>Hebrew contracts, local regulations, and unique mortgage structures</span>
                         </li>
                         <li>
-                            <span class="why-icon">🌍</span>
-                            <div>
-                                <strong>Global Demand</strong>
-                                <p>A diverse international buyer pool creates a resilient, liquid market.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="why-icon">🔒</span>
-                            <div>
-                                <strong>Stable Economy</strong>
-                                <p>Israel's tech-driven economy provides a strong foundation for real estate investment.</p>
-                            </div>
+                            <strong>Local connections matter</strong>
+                            <span>The best deals come through relationships, not just listings</span>
                         </li>
                     </ul>
                 </div>
-                <div class="why-image reveal">
-                    <!--
-                        IMAGE #3: israel-cityscape.jpg — 600x500 (6:5)
-                        PROMPT: Beautiful Mediterranean coastal city view in Israel, white stone buildings
-                        cascading down hillside toward blue sea, lush greenery, warm golden light, mix of
-                        modern and historic architecture, professional travel photography, aspirational
-                        and inviting atmosphere
-                    -->
-                    <div class="image-placeholder cityscape">
-                        <span>ISRAEL CITYSCAPE — 600 × 500 (6:5)</span>
-                    </div>
+                <div class="why-image">
+                    <img src="images/israel_cityscape.jpg" alt="Israel Cityscape" class="cityscape-img" style="border-radius: var(--radius); width: 100%; height: auto;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== TESTIMONIALS ===================== -->
+    <!-- Testimonials -->
     <section class="testimonials section" id="testimonials">
         <div class="container">
-            <div class="section-header reveal">
-                <p class="section-eyebrow">Client Stories</p>
-                <h2 class="section-title">Trusted by Buyers Worldwide</h2>
+            <div class="section-header">
+                <p class="section-tag">Client Stories</p>
+                <h2 class="section-title">Trusted by Families & Investors</h2>
             </div>
             <div class="testimonials-grid">
-                <div class="testimonial-card reveal">
-                    <!--
-                        IMAGE #5a: avatar-1.jpg — 60x60 (1:1)
-                        Replace with real client photo or leave as gold circle
-                    -->
-                    <div class="testimonial-avatar"></div>
-                    <blockquote>"Yael didn't just find us an apartment — she helped us understand what we actually needed. Her knowledge of the legal system saved us from a costly mistake."</blockquote>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Yael made the impossible feel simple. We were buying from abroad and she handled everything — from finding the perfect apartment to coordinating the renovation. We couldn't have done it without her."</p>
                     <div class="testimonial-author">
-                        <strong>David & Sarah M.</strong>
-                        <span>Purchased in Jerusalem</span>
+                        <!-- PLACEHOLDER: Client avatar - 60x60px circle -->
+                        <div class="avatar-placeholder"></div>
+                        <div>
+                            <strong>Client Name</strong>
+                            <span>Purchased in Jerusalem</span>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-avatar"></div>
-                    <blockquote>"We were buying from abroad and had no idea where to start. Yael handled everything — lawyers, mortgage, renovations. She made it seamless."</blockquote>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"What sets Yael apart is that she truly listens. She helped us figure out what we actually needed — not just what we thought we wanted. The result was better than we imagined."</p>
                     <div class="testimonial-author">
-                        <strong>Michael R.</strong>
-                        <span>Purchased in Tel Aviv</span>
+                        <div class="avatar-placeholder"></div>
+                        <div>
+                            <strong>Client Name</strong>
+                            <span>Purchased in Tel Aviv</span>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-avatar"></div>
-                    <blockquote>"What sets Yael apart is that she genuinely cares. She talked us out of a bad deal and found us something far better. We couldn't be happier."</blockquote>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The legal and mortgage process in Israel felt daunting until Yael connected us with her network. Every professional she recommended was excellent. She's the real deal."</p>
                     <div class="testimonial-author">
-                        <strong>Rachel & Jonathan K.</strong>
-                        <span>Purchased in Netanya</span>
+                        <div class="avatar-placeholder"></div>
+                        <div>
+                            <strong>Client Name</strong>
+                            <span>Investment Property</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== CTA ===================== -->
-    <section class="cta-section" id="cta">
-        <!--
-            IMAGE #4: cta-bg.jpg — 1920x600 (16:5)
-            PROMPT: Elegant interior of a modern Israeli apartment with large windows overlooking
-            Mediterranean cityscape, warm natural light streaming in, minimalist design with stone
-            and wood accents, premium real estate photography, aspirational living space
-        -->
-        <div class="cta-bg">
-            <div class="cta-bg-placeholder">
-                <span>CTA BACKGROUND — 1920 × 600 (16:5)</span>
-            </div>
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="cta-bg" style="background-image: url('images/cta_bg.jpg');">
+            <div class="cta-overlay"></div>
         </div>
-        <div class="cta-overlay"></div>
-        <div class="cta-content">
-            <h2>Ready to Find Your Perfect Property in Israel?</h2>
-            <p>Let's start with a free, no-obligation conversation about your goals.</p>
-            <a href="#contact" class="btn btn-primary btn-lg">Book Your Free Consultation</a>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Find Your Perfect Property in Israel?</h2>
+                <p>Whether you're just exploring or ready to buy — let's start with a conversation. No obligation, no pressure.</p>
+                <a href="#contact" class="btn btn-primary btn-large">Book Your Free Consultation</a>
+            </div>
         </div>
     </section>
 
-    <!-- ===================== CONTACT ===================== -->
+    <!-- Contact Section -->
     <section class="contact section" id="contact">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info reveal">
-                    <p class="section-eyebrow">Get in Touch</p>
-                    <h2 class="section-title">Let's Talk About Your Goals</h2>
-                    <p>Whether you're just starting to think about buying in Israel or ready to move forward, I'd love to hear from you. Every journey starts with a conversation.</p>
+                <div class="contact-info">
+                    <p class="section-tag">Get in Touch</p>
+                    <h2 class="section-title">Let's Start a Conversation</h2>
+                    <p>Reach out and tell me a little about what you're looking for. I respond to every inquiry personally — usually within 24 hours.</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <span class="contact-icon">📧</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+                                <path d="M3 8l9 6 9-6"/>
+                                <rect x="3" y="6" width="18" height="12" rx="2"/>
+                            </svg>
                             <div>
                                 <strong>Email</strong>
                                 <a href="mailto:yael@israelpropertyadvisors.com">yael@israelpropertyadvisors.com</a>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📱</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
                             <div>
-                                <strong>WhatsApp</strong>
-                                <a href="https://wa.me/972000000000">+972 XX-XXX-XXXX</a>
+                                <strong>Phone / WhatsApp</strong>
+                                <a href="tel:+972000000000">+972 (0) 00-000-0000</a>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📍</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
                             <div>
                                 <strong>Based in</strong>
                                 <span>Israel</span>
@@ -370,59 +362,60 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-wrapper reveal">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Your name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone / WhatsApp</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
-                        </div>
-                        <div class="form-group">
-                            <label for="interest">What are you looking for?</label>
-                            <select id="interest" name="interest">
-                                <option value="">Select an option</option>
-                                <option value="primary">Primary residence</option>
-                                <option value="vacation">Vacation home</option>
-                                <option value="investment">Investment property</option>
-                                <option value="unsure">Not sure yet — need guidance</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Tell me a bit about your goals</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Budget range, preferred areas, timeline, any questions..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                    </form>
-                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Phone / WhatsApp (optional)">
+                    </div>
+                    <div class="form-group">
+                        <select name="interest" required>
+                            <option value="" disabled selected>What are you looking for?</option>
+                            <option value="first-home">First home in Israel</option>
+                            <option value="investment">Investment property</option>
+                            <option value="relocation">Relocating to Israel</option>
+                            <option value="vacation">Vacation apartment</option>
+                            <option value="other">Not sure yet — let's talk</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="4" placeholder="Tell me a bit about what you're looking for..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- ===================== FOOTER ===================== -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/logo.png" alt="Israel Property Advisors" class="footer-logo-img">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <img src="images/logo_icon.png" alt="Logo Icon" class="logo-icon" style="height: 32px; width: auto; display: block;">
+                        <span class="logo-text" style="color: #C6A962;">Israel Property Advisors</span>
+                    </div>
+                    <p>Expert guidance for buying property in Israel. Personal service from search to keys in hand.</p>
                 </div>
                 <div class="footer-links">
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
                     <a href="#process">Process</a>
+                    <a href="#testimonials">Testimonials</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <p class="footer-copy">&copy; 2026 Israel Property Advisors. All rights reserved.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Israel Property Advisors. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

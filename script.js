@@ -148,6 +148,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- FAQ accordion ---
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+            btn.setAttribute('aria-expanded', !isActive);
+        });
+    });
+
     // --- Active nav link highlighting ---
     const sections = document.querySelectorAll('section[id]');
     const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');

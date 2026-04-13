@@ -64,24 +64,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
 
-        // For now, just show a confirmation
         const btn = form.querySelector('button[type="submit"]');
         const originalText = btn.textContent;
-        btn.textContent = 'Message Sent!';
-        btn.style.background = '#2d8a4e';
-        btn.style.borderColor = '#2d8a4e';
+        btn.textContent = 'Sending...';
         btn.disabled = true;
 
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            btn.style.borderColor = '';
-            btn.disabled = false;
-            form.reset();
-        }, 3000);
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                btn.textContent = 'Message Sent \u2713';
+                btn.style.background = '#2d8a4e';
+                btn.style.borderColor = '#2d8a4e';
+                form.reset();
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.style.borderColor = '';
+                    btn.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error('Failed');
+            }
+        })
+        .catch(() => {
+            btn.textContent = 'Error \u2014 try again';
+            btn.style.background = '#e74c3c';
+            btn.style.borderColor = '#e74c3c';
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+                btn.style.borderColor = '';
+                btn.disabled = false;
+            }, 3000);
+        });
     });
 
     // --- Testimonial Carousel ---

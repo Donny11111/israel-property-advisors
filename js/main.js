@@ -74,24 +74,39 @@ const contactForm = document.getElementById('contactForm');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-
-    // For now, just show a success message
-    // Replace with actual form submission (e.g., Formspree, EmailJS, etc.)
     const btn = contactForm.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
-
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = '#4CAF50';
+    btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-        contactForm.reset();
-    }, 3000);
+    fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+            btn.textContent = 'Message Sent ✓';
+            btn.style.background = '#4CAF50';
+            contactForm.reset();
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 3000);
+        } else {
+            throw new Error('Failed');
+        }
+    })
+    .catch(() => {
+        btn.textContent = 'Error — try again';
+        btn.style.background = '#e74c3c';
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+        }, 3000);
+    });
 });
 
 // ============================

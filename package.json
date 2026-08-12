@@ -4,6 +4,7 @@
   "description": "Israel Property Advisors - Yael Stolbach",
   "main": "server.js",
   "scripts": {
+    "postinstall": "node -e \"try{require('./relink-node-modules.js')}catch(e){}\"",
     "start": "node server.js",
     "dev": "node server.js"
   },
